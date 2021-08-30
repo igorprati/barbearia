@@ -56,63 +56,23 @@ a {
   }
 
   &__main {
-    &__agendar {
-      display: inline-block;
-      @media screen and(max-width: 700px) {
-        display: block;
-      }
-
-      & .title {
-        margin-top: 3rem;
-      }
-
-      & form {
-        display: flex;
-        flex-wrap: wrap;
-        background-color: white;
-        padding: 1rem 1rem;
-        margin: 1rem 0;
-        border-radius: 0.5rem;
-        box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.096);
-
-        @media screen and(max-width: 700px) {
-          flex-direction: column;
-        }
-
-        button {
-          margin-top: 1rem;
-          color: white;
-          background-color: rgb(87, 92, 133);
-          border: 1px solid gray;
-          border-radius: 0.5rem;
-          cursor: pointer;
-        }
-
-        & .field {
-          display: flex;
-          flex-direction: column;
-          margin-right: 1rem;
-
-          @media screen and(max-width: 700px) {
-            margin-right: 0;
-          }
-
-          input {
-            outline: none;
-            border: 1px solid gray;
-            padding: 0.2rem 0.5rem;
-            border-radius: 0.5rem;
-
-            &:focus {
-              background-color: rgb(246, 246, 246);
-            }
-          }
-        }
-      }
-    }
 
     &__agendamentos {
       overflow-x: auto;
+
+      #buscar {
+        font-size: 1rem;
+        outline: none;
+      }
+
+      #filtrar {
+        margin-bottom: 0.2rem;
+      }
+
+      button {
+        margin-right: 0.5rem;
+        cursor: pointer;
+      }
 
       & .title {
         margin-top: 3rem;

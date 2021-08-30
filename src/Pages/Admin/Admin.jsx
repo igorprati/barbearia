@@ -14,13 +14,23 @@ export default function Admin() {
 
       <main className="admin__main">
         <div className="container">
-          
-
           <div className="admin__main__agendamentos">
-            <h3 className="title">Ver agendamentos</h3>
+            <h3 className="title">Todos os Agendamentos</h3>
+
+            <p>Buscar:</p>
+            <input type="text" id='buscar' />
+
+            <p id='filtrar'>Filtrar por:</p>
+            <button>CPF</button>
+            <button>Nome</button>
+            <button>Data</button>
+            <button>Hora</button>
+
             <table>
               <thead>
                 <tr>
+                  <th>CPF</th>
+                  <th>Nome</th>
                   <th>Data</th>
                   <th>Hora</th>
                   <th>Serviço</th>
@@ -29,6 +39,8 @@ export default function Admin() {
               </thead>
               <tbody>
                 <tr>
+                  <td>163.171.757-05</td>
+                  <td>Igor Prati</td>
                   <td>30/08/2021</td>
                   <td>15:40</td>
                   <td>Corte e barba</td>
@@ -36,6 +48,8 @@ export default function Admin() {
                 </tr>
 
                 <tr>
+                  <td>543.452.732-87</td>
+                  <td>Rodrigo Silva</td>
                   <td>31/08/2021</td>
                   <td>14:10</td>
                   <td>Corte</td>
@@ -43,6 +57,8 @@ export default function Admin() {
                 </tr>
 
                 <tr>
+                  <td>008.085.732-55</td>
+                  <td>Jeremias</td>
                   <td>29/08/2021</td>
                   <td>15:15</td>
                   <td>Barba</td>
@@ -50,6 +66,8 @@ export default function Admin() {
                 </tr>
 
                 <tr>
+                  <td>654.160.327-53</td>
+                  <td>Marcos Rodrigues</td>
                   <td>30/08/2021</td>
                   <td>10:50</td>
                   <td>Corte e barba</td>
