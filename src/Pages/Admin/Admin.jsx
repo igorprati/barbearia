@@ -1,43 +1,22 @@
 import React from "react";
-import "./user.scss";
+import "./admin.scss";
 
-export default function User() {
+export default function Admin() {
   return (
-    <section className="user">
-      <header className="user__header">
-        <div className="user__header__bg"></div>
+    <section className="admin">
+      <header className="admin__header">
+        <div className="admin__header__bg"></div>
         <div className="container">
           <p>Olá, Igor!</p>
           <h1>Agendamentos</h1>
         </div>
       </header>
 
-      <main className="user__main">
+      <main className="admin__main">
         <div className="container">
-          <div className="user__main__agendar">
-            <h3 className="title">Agendar Serviço</h3>
+          
 
-            <form onSubmit="">
-              <div className="field">
-                <label htmlFor="">Data: </label>
-                <input type="date" />
-              </div>
-
-              <div className="field">
-                <label htmlFor="">Hora: </label>
-                <input type="time" />
-              </div>
-
-              <div className="field">
-                <label htmlFor="">Serviço: </label>
-                <input type="text" />
-              </div>
-
-              <button>Agendar</button>
-            </form>
-          </div>
-
-          <div className="user__main__agendamentos">
+          <div className="admin__main__agendamentos">
             <h3 className="title">Ver agendamentos</h3>
             <table>
               <thead>

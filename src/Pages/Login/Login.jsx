@@ -1,9 +1,17 @@
 import React from "react";
 import "./login.scss";
 import img from "../../Images/image01.jpg";
-import bg from "../../Images/barber-shop01.jpg";
+import bg from "../../Images/barber-shop.jpg";
+import { useHistory } from "react-router";
 
 export default function Login() {
+
+  const history = useHistory()
+
+  const submitHandler = () => {
+    history.push('/user')
+  }
+
   return (
     <section className="login">
       <div className="login__bg">
@@ -15,7 +23,7 @@ export default function Login() {
             <h2>Entrar</h2>
             <p>Faça login para consultar e/ou marcar horários.</p>
 
-            <form action="">
+            <form onSubmit={submitHandler}>
               <div className="form__field">
                 <label htmlFor="">CPF:</label>
                 <input type="number" placeholder='Ex.: 88277633212' required />
