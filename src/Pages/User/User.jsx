@@ -1,7 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./user.scss";
 
 export default function User() {
+  const [data, setData] = useState("");
+  const [hora, setHora] = useState("");
+  const [servico, setServico] = useState("");
+  const [status, setStatus] = useState("Agendado");
+
+  const [agendamentos, setAgendamentos] = useState([]);
+
+  const agendamento = {
+    data: data,
+    hora: hora,
+    servico: servico,
+    status: status,
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    setAgendamentos([...agendamentos, agendamento]);
+  };
+
+
+
   return (
     <section className="user">
       <header className="user__header">
@@ -17,20 +38,24 @@ export default function User() {
           <div className="user__main__agendar">
             <h3 className="title">Agendar Serviço</h3>
 
-            <form>
+            <form onSubmit={submitHandler}>
               <div className="field">
                 <label htmlFor="">Data: </label>
-                <input type="date" />
+                <input type="date" onChange={(e) => setData(e.target.value)} />
               </div>
 
               <div className="field">
                 <label htmlFor="">Hora: </label>
-                <input type="time" />
+                <input type="time" onChange={(e) => setHora(e.target.value)} />
               </div>
 
               <div className="field">
                 <label htmlFor="">Serviço: </label>
-                <select name="servico" id="servico">
+                <select
+                  name="servico"
+                  id="servico"
+                  onChange={(e) => setServico(e.target.value)}
+                >
                   <option value="Selecione um serviço" hidden>
                     Selecione um serviço
                   </option>
@@ -40,7 +65,7 @@ export default function User() {
                 </select>
               </div>
 
-              <button>Agendar</button>
+              <button type="submit">Agendar</button>
             </form>
           </div>
 
@@ -56,33 +81,14 @@ export default function User() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>30/08/2021</td>
-                  <td>15:40</td>
-                  <td>Corte e barba</td>
-                  <td>Marcado</td>
-                </tr>
-
-                <tr>
-                  <td>31/08/2021</td>
-                  <td>14:10</td>
-                  <td>Corte</td>
-                  <td>Concluído</td>
-                </tr>
-
-                <tr>
-                  <td>29/08/2021</td>
-                  <td>15:15</td>
-                  <td>Barba</td>
-                  <td>Cancelado</td>
-                </tr>
-
-                <tr>
-                  <td>30/08/2021</td>
-                  <td>10:50</td>
-                  <td>Corte e barba</td>
-                  <td>Concluído</td>
-                </tr>
+                {agendamentos.map((item) => (
+                  <tr key={item.data}>
+                    <td>{item.data}</td>
+                    <td>{item.hora}</td>
+                    <td>{item.servico}</td>
+                    <td>{item.status}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
