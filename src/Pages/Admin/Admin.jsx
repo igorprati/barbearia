@@ -14,17 +14,16 @@ export default function Admin() {
 
       <main className="admin__main">
         <div className="container">
-          
-            <h3 className="title">Todos os Agendamentos</h3>
+          <h3 className="title">Todos os Agendamentos</h3>
 
-            <p>Buscar:</p>
-            <input type="text" id='buscar' />
+          <p>Buscar:</p>
+          <input type="text" id="buscar" />
 
-            <p id='filtrar'>Filtrar por:</p>
-            <button>CPF</button>
-            <button>Nome</button>
-            <button>Data</button>
-            <button>Hora</button>
+          <p id="filtrar">Filtrar por:</p>
+          <button>CPF</button>
+          <button>Nome</button>
+          <button>Data</button>
+          <button>Hora</button>
 
           <div className="admin__main__agendamentos">
             <table>

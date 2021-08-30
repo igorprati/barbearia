@@ -30,7 +30,14 @@ export default function User() {
 
               <div className="field">
                 <label htmlFor="">Serviço: </label>
-                <input type="text" />
+                <select name="servico" id="servico">
+                  <option value="Selecione um serviço" hidden>
+                    Selecione um serviço
+                  </option>
+                  <option value="Corte e Barba">Corte e Barba</option>
+                  <option value="Corte">Corte</option>
+                  <option value="Barba">Barba</option>
+                </select>
               </div>
 
               <button>Agendar</button>
