@@ -14,7 +14,7 @@ export default function Admin() {
 
       <main className="admin__main">
         <div className="container">
-          <div className="admin__main__agendamentos">
+          
             <h3 className="title">Todos os Agendamentos</h3>
 
             <p>Buscar:</p>
@@ -26,6 +26,7 @@ export default function Admin() {
             <button>Data</button>
             <button>Hora</button>
 
+          <div className="admin__main__agendamentos">
             <table>
               <thead>
                 <tr>

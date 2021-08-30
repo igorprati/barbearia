@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./user.scss";
 
 export default function User() {
@@ -17,7 +17,7 @@ export default function User() {
           <div className="user__main__agendar">
             <h3 className="title">Agendar Serviço</h3>
 
-            <form onSubmit="">
+            <form>
               <div className="field">
                 <label htmlFor="">Data: </label>
                 <input type="date" />

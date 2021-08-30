@@ -56,28 +56,30 @@ a {
   }
 
   &__main {
+    #buscar {
+      font-size: 1rem;
+      outline: none;
+      border-radius: 0.5rem;
+      border: 1px solid gray;
+      padding: 0.2rem 0.5rem;
+    }
+
+    #filtrar {
+      margin-bottom: 0.2rem;
+    }
+
+    button {
+      margin-right: 0.5rem;
+      cursor: pointer;
+    }
+
+    & .title {
+      margin-top: 3rem;
+    }
+
 
     &__agendamentos {
       overflow-x: auto;
-
-      #buscar {
-        font-size: 1rem;
-        outline: none;
-      }
-
-      #filtrar {
-        margin-bottom: 0.2rem;
-      }
-
-      button {
-        margin-right: 0.5rem;
-        cursor: pointer;
-      }
-
-      & .title {
-        margin-top: 3rem;
-      }
-
       & table {
         text-align: left;
         background-color: white;
