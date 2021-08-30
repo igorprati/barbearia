@@ -4,9 +4,6 @@ import img from "../../Images/image01.jpg";
 import bg from "../../Images/barber-shop01.jpg";
 
 export default function Login() {
-
-  
-
   return (
     <section className="login">
       <div className="login__bg">
@@ -15,14 +12,13 @@ export default function Login() {
       <div className="container">
         <div className="login__box">
           <div className="login__box__form">
-
-            <h2>Olá, novamente!</h2>
+            <h2>Entrar</h2>
             <p>Faça login para consultar e/ou marcar horários.</p>
 
             <form action="">
               <div className="form__field">
                 <label htmlFor="">CPF:</label>
-                <input type="number" required />
+                <input type="number" placeholder='Ex.: 88277633212' required />
               </div>
 
               <div className="form__field">
@@ -44,10 +40,14 @@ export default function Login() {
             </form>
 
             <hr />
-            <button type="button" id="cadastrar">
-              Criar uma conta
-            </button>
-          </div> 
+
+            <a href="/register">
+              <button type="button" id="cadastrar">
+                Criar uma conta
+              </button>
+            </a>
+
+          </div>
 
           <div className="login__box__img">
             <img src={img} alt="" />
