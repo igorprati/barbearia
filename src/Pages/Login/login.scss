@@ -1,0 +1,136 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 2%;
+  max-width: 700px;
+
+  @media screen and(max-width: 620px) {
+    max-width: 400px;
+  }
+}
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(98, 98, 98);
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    & img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      opacity: 0.2;
+    }
+  }
+
+  &__box {
+    width: 700px;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 15px 5px 15px rgba(0, 0, 0, 0.185);
+    position: relative;
+    z-index: 3;
+
+    @media screen and(max-width: 620px) {
+      max-width: 350px;
+    }
+
+    &__form {
+      width: 300px;
+      margin-left: 1.5rem;
+
+      form {
+        & .form__field {
+          display: flex;
+          flex-direction: column;
+          margin: 0.8rem 0;
+
+          & input {
+            padding: 0.2rem 0.5rem;
+            font-size: 1rem;
+            border-radius: 0.2rem;
+            border: 1px solid gray;
+            outline: none;
+
+            &:focus {
+              background-color: rgb(246, 246, 246);
+            }
+          }
+        }
+
+        & .form__option {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        & #login {
+          margin: 1rem 0 1rem 0;
+          padding: 0.3rem 2rem;
+          border-radius: 0.2rem;
+          border: 1px solid gray;
+          color: white;
+          background-color: rgb(87, 92, 133);
+          cursor: pointer;
+          width: 100%;
+        }
+      }
+
+      & #cadastrar {
+        margin: 1rem 0 1rem 0;
+        padding: 0.3rem 2rem;
+        border-radius: 0.2rem;
+        border: 1px solid gray;
+        background-color: transparent;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      & .register {
+        padding: 0.3rem 3rem;
+        border-radius: 2rem;
+        border: 1px solid gray;
+        color: white;
+        background-color: rgb(155, 155, 155);
+        cursor: pointer;
+      }
+    }
+
+    &__img {
+      width: 300px;
+
+      @media screen and(max-width: 620px) {
+        display: none;
+      }
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
