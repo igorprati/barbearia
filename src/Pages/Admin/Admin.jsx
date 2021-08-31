@@ -1,7 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import "./admin.scss";
 
 export default function Admin() {
+
+  
+  const [info, setInfo] = useState([
+    {
+      cpf: '163.717.757-05',
+      nome: 'Igor Prati',
+      data: '30/08/2021',
+      hora: '15:40',
+      servico: 'Corte e barba',
+      status: 'Marcado',
+    },
+    {
+      cpf: '543.452.732-87',
+      nome: 'Rodrigo Silva',
+      data: '31/08/2021',
+      hora: '14:10',
+      servico: 'Corte',
+      status: 'Concluído',
+    },
+    {
+      cpf: '008.085.732-55',
+      nome: 'Jeremias',
+      data: '29/08/2021',
+      hora: '15:15',
+      servico: 'Barba',
+      status: 'Cancelado',
+    },
+    {
+      cpf: '654.160.327-53',
+      nome: 'Marcos Rodrigues',
+      data: '30/08/2021',
+      hora: '10:50',
+      servico: 'Corte e barba',
+      status: 'Concluído',
+    },
+  ])
+  const [busca, setBusca] = useState(info)
+
+  const filterNomes = (e) => {
+    const filtered = busca.filter(item => item.nome.toLowerCase().includes(e.target.value.toLowerCase()))
+    setInfo(filtered)
+  }
+
+
   return (
     <section className="admin">
       <header className="admin__header">
@@ -17,7 +61,7 @@ export default function Admin() {
           <h3 className="title">Todos os Agendamentos</h3>
 
           <p>Buscar:</p>
-          <input type="text" id="buscar" />
+          <input type="text" id="buscar" placeholder='Pesquisar por nome..' onChange={filterNomes}/>
 
           <p id="filtrar">Filtrar por:</p>
           <button>CPF</button>
@@ -38,41 +82,16 @@ export default function Admin() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>163.171.757-05</td>
-                  <td>Igor Prati</td>
-                  <td>30/08/2021</td>
-                  <td>15:40</td>
-                  <td>Corte e barba</td>
-                  <td>Marcado</td>
-                </tr>
-
-                <tr>
-                  <td>543.452.732-87</td>
-                  <td>Rodrigo Silva</td>
-                  <td>31/08/2021</td>
-                  <td>14:10</td>
-                  <td>Corte</td>
-                  <td>Concluído</td>
-                </tr>
-
-                <tr>
-                  <td>008.085.732-55</td>
-                  <td>Jeremias</td>
-                  <td>29/08/2021</td>
-                  <td>15:15</td>
-                  <td>Barba</td>
-                  <td>Cancelado</td>
-                </tr>
-
-                <tr>
-                  <td>654.160.327-53</td>
-                  <td>Marcos Rodrigues</td>
-                  <td>30/08/2021</td>
-                  <td>10:50</td>
-                  <td>Corte e barba</td>
-                  <td>Concluído</td>
-                </tr>
+                {info.map(item => (
+                  <tr key={item.cpf}>
+                    <td>{item.cpf}</td>
+                    <td>{item.nome}</td>
+                    <td>{item.data}</td>
+                    <td>{item.hora}</td>
+                    <td>{item.servico}</td>
+                    <td>{item.status}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

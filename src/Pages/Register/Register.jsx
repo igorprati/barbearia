@@ -9,6 +9,7 @@ export default function Register() {
       <div className="register__bg">
         <img src={bg} alt="" />
       </div>
+
       <div className="container">
         <div className="register__box">
           <div className="register__box__form">
