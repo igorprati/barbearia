@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import  { mask } from 'remask';
 import "./admin.scss";
 
 export default function Admin() {
@@ -6,7 +7,7 @@ export default function Admin() {
   
   const [info, setInfo] = useState([
     {
-      cpf: '163.717.757-05',
+      cpf: '16371775705',
       nome: 'Igor Prati',
       data: '30/08/2021',
       hora: '15:40',
@@ -14,7 +15,7 @@ export default function Admin() {
       status: 'Marcado',
     },
     {
-      cpf: '543.452.732-87',
+      cpf: '54345273287',
       nome: 'Rodrigo Silva',
       data: '31/08/2021',
       hora: '14:10',
@@ -22,7 +23,7 @@ export default function Admin() {
       status: 'Concluído',
     },
     {
-      cpf: '008.085.732-55',
+      cpf: '00808573255',
       nome: 'Jeremias',
       data: '29/08/2021',
       hora: '15:15',
@@ -30,7 +31,7 @@ export default function Admin() {
       status: 'Cancelado',
     },
     {
-      cpf: '654.160.327-53',
+      cpf: '65416032753',
       nome: 'Marcos Rodrigues',
       data: '30/08/2021',
       hora: '10:50',
@@ -41,7 +42,7 @@ export default function Admin() {
   const [busca, setBusca] = useState(info)
 
   const filterNomes = (e) => {
-    const filtered = busca.filter(item => item.nome.toLowerCase().includes(e.target.value.toLowerCase()))
+    const filtered = busca.filter(item => item.nome.toLowerCase().includes(e.target.value.toLowerCase()) || item.cpf.includes(e.target.value))
     setInfo(filtered)
   }
 
@@ -61,13 +62,14 @@ export default function Admin() {
           <h3 className="title">Todos os Agendamentos</h3>
 
           <p>Buscar:</p>
-          <input type="text" id="buscar" placeholder='Pesquisar por nome..' onChange={filterNomes}/>
+          <input type="text" id="buscar" placeholder='Buscar nome ou CPF...' onChange={filterNomes}/>
 
-          <p id="filtrar">Filtrar por:</p>
+          {/* <p id="filtrar">Filtrar por:</p>
           <button>CPF</button>
           <button>Nome</button>
           <button>Data</button>
-          <button>Hora</button>
+          <button>Hora</button> */}
+          <p>Foram encontrados {info.length} resultados.</p>
 
           <div className="admin__main__agendamentos">
             <table>
@@ -84,7 +86,7 @@ export default function Admin() {
               <tbody>
                 {info.map(item => (
                   <tr key={item.cpf}>
-                    <td>{item.cpf}</td>
+                    <td>{mask(item.cpf, "999.999.999-99")}</td>
                     <td>{item.nome}</td>
                     <td>{item.data}</td>
                     <td>{item.hora}</td>
