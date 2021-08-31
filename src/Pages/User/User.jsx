@@ -70,12 +70,13 @@ export default function User() {
                   placeholder="00/00/0000"
                   onChange={onChange}
                   value={value}
+                  required
                 />
               </div>
 
               <div className="field">
                 <label htmlFor="">Hora: </label>
-                <input type="time" onChange={(e) => setHora(e.target.value)} />
+                <input type="time" onChange={(e) => setHora(e.target.value)} required/>
               </div>
 
               <div className="field">
@@ -84,6 +85,7 @@ export default function User() {
                   name="servico"
                   id="servico"
                   onChange={(e) => setServico(e.target.value)}
+                  required
                 >
                   <option value="Selecione um serviço" hidden>
                     Selecione um serviço
