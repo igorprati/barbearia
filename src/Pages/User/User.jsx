@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import  { mask, unMask } from 'remask';
 import "./user.scss";
 
 export default function User() {
@@ -21,7 +22,13 @@ export default function User() {
     setAgendamentos([...agendamentos, agendamento]);
   };
 
-
+  const [value, setValue] = useState('')
+  const onChange = (e) => {
+    const originalValue = unMask(e.target.value)
+    const maskedValue = mask(originalValue, ["99/99/9999"])
+    setValue(maskedValue)
+    setData(maskedValue)
+  }
 
   return (
     <section className="user">
@@ -41,7 +48,7 @@ export default function User() {
             <form onSubmit={submitHandler}>
               <div className="field">
                 <label htmlFor="">Data: </label>
-                <input type="date" onChange={(e) => setData(e.target.value)} />
+                <input type='text' placeholder='00/00/0000' onChange={onChange} value={value} />
               </div>
 
               <div className="field">
